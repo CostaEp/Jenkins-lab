@@ -29,7 +29,7 @@ pipeline {
                     }
                 }
                 sh 'cat jenkins/logs/log.txt'
-                echo "test from git"
+                echo "test from git "
             }
         }
     }
