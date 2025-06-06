@@ -17,9 +17,9 @@ pipeline {
         stage('second stage') {
             steps {
                 sh ''' ls -la
-                        mkdir -p jenkins/logs && cd jenkins/logs
+                        mkdir -p jenkins/logs
                         for name in costa lev alex; do
-                            echo "Hello , $name" >> jenkins/logs/logs.txt
+                            echo "Hello , $name" >> jenkins/logs/log.txt
                         done
                     '''
                 script {
@@ -28,6 +28,7 @@ pipeline {
                         echo "Hello, ${name}"
                     }
                 }
+                sh 'cat jenkins/logs/log.txt'
             }
         }
     }
